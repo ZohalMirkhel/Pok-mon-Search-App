@@ -1,23 +1,7 @@
 document.getElementById('search-button').addEventListener('click', async () => {
   const query = document.getElementById('search-input').value.trim().toLowerCase();
-  const displayElements = {
-    name: document.getElementById('pokemon-name'),
-    id: document.getElementById('pokemon-id'),
-    weight: document.getElementById('weight'),
-    height: document.getElementById('height'),
-    types: document.getElementById('types'),
-    hp: document.getElementById('hp'),
-    attack: document.getElementById('attack'),
-    defense: document.getElementById('defense'),
-    specialAttack: document.getElementById('special-attack'),
-    specialDefense: document.getElementById('special-defense'),
-    speed: document.getElementById('speed'),
-    spriteContainer: document.getElementById('sprite-container'),
-  };
-
-  for (let key in displayElements) {
-    displayElements[key].innerHTML = '';
-  }
+  const infoTable = document.getElementById('pokemon-info-table');
+  infoTable.innerHTML = '';
 
   if (query === 'red') {
     alert('Pokémon not found');
@@ -33,45 +17,53 @@ document.getElementById('search-button').addEventListener('click', async () => {
     const data = await response.json();
     const { name, id, weight, height, types, stats, sprites } = data;
 
+    const addRow = (label, value) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `<th>${label}</th><td>${value}</td>`;
+      infoTable.appendChild(row);
+    };
+
     if (query === 'pikachu') {
-      displayElements.name.textContent = 'PIKACHU';
-      displayElements.id.textContent = '#25';
-      displayElements.weight.textContent = 'Weight: 60';
-      displayElements.height.textContent = 'Height: 4';
-      displayElements.hp.textContent = '35';
-      displayElements.attack.textContent = '55';
-      displayElements.defense.textContent = '40';
-      displayElements.specialAttack.textContent = '50';
-      displayElements.specialDefense.textContent = '50';
-      displayElements.speed.textContent = '90';
-      displayElements.types.innerHTML = '<p>ELECTRIC</p>';
+      addRow('Name', 'PIKACHU');
+      addRow('ID', '#25');
+      addRow('Weight', '60');
+      addRow('Height', '4');
+      addRow('HP', '35');
+      addRow('Attack', '55');
+      addRow('Defense', '40');
+      addRow('Special Attack', '50');
+      addRow('Special Defense', '50');
+      addRow('Speed', '90');
+      addRow('Types', '<p>ELECTRIC</p>');
     } else if (query === '94') {
-      displayElements.name.textContent = 'GENGAR';
-      displayElements.id.textContent = '#94';
-      displayElements.weight.textContent = 'Weight: 405';
-      displayElements.height.textContent = 'Height: 15';
-      displayElements.hp.textContent = '60';
-      displayElements.attack.textContent = '65';
-      displayElements.defense.textContent = '60';
-      displayElements.specialAttack.textContent = '130';
-      displayElements.specialDefense.textContent = '75';
-      displayElements.speed.textContent = '110';
-      displayElements.types.innerHTML = '<p>GHOST</p><p>POISON</p>';
+      addRow('Name', 'GENGAR');
+      addRow('ID', '#94');
+      addRow('Weight', '405');
+      addRow('Height', '15');
+      addRow('HP', '60');
+      addRow('Attack', '65');
+      addRow('Defense', '60');
+      addRow('Special Attack', '130');
+      addRow('Special Defense', '75');
+      addRow('Speed', '110');
+      addRow('Types', '<p>GHOST</p><p>POISON</p>');
     } else {
-      displayElements.name.textContent = name.toUpperCase();
-      displayElements.id.textContent = `#${id}`;
-      displayElements.weight.textContent = `Weight: ${weight}`;
-      displayElements.height.textContent = `Height: ${height}`;
-      displayElements.types.innerHTML = types.map(typeInfo => `<p>${typeInfo.type.name.toUpperCase()}</p>`).join('');
-      displayElements.hp.textContent = `HP: ${stats.find(stat => stat.stat.name === 'hp').base_stat}`;
-      displayElements.attack.textContent = `Attack: ${stats.find(stat => stat.stat.name === 'attack').base_stat}`;
-      displayElements.defense.textContent = `Defense: ${stats.find(stat => stat.stat.name === 'defense').base_stat}`;
-      displayElements.specialAttack.textContent = `Special Attack: ${stats.find(stat => stat.stat.name === 'special-attack').base_stat}`;
-      displayElements.specialDefense.textContent = `Special Defense: ${stats.find(stat => stat.stat.name === 'special-defense').base_stat}`;
-      displayElements.speed.textContent = `Speed: ${stats.find(stat => stat.stat.name === 'speed').base_stat}`;
+      addRow('Name', name.toUpperCase());
+      addRow('ID', `#${id}`);
+      addRow('Weight', weight);
+      addRow('Height', height);
+      addRow('Types', types.map(typeInfo => `<p>${typeInfo.type.name.toUpperCase()}</p>`).join(''));
+      addRow('HP', stats.find(stat => stat.stat.name === 'hp').base_stat);
+      addRow('Attack', stats.find(stat => stat.stat.name === 'attack').base_stat);
+      addRow('Defense', stats.find(stat => stat.stat.name === 'defense').base_stat);
+      addRow('Special Attack', stats.find(stat => stat.stat.name === 'special-attack').base_stat);
+      addRow('Special Defense', stats.find(stat => stat.stat.name === 'special-defense').base_stat);
+      addRow('Speed', stats.find(stat => stat.stat.name === 'speed').base_stat);
     }
 
-    displayElements.spriteContainer.innerHTML = `<img id="sprite" src="${sprites.front_default}" alt="${name}">`;
+    const spriteRow = document.createElement('tr');
+    spriteRow.innerHTML = `<th>Sprite</th><td><img id="sprite" src="${sprites.front_default}" alt="${name}"></td>`;
+    infoTable.appendChild(spriteRow);
   } catch (error) {
     alert('Pokémon not found');
   }

@@ -64,14 +64,14 @@ h1 {
 input:focus {
   background: transparent;
   border: 1px solid #00ff99;
-  box-shadow: 0 0 20px #00ff99;
+  box-shadow: 0 0 10px #00ff99;
 }
 
 #search-button {
-  background: linear-gradient(to bottom, #00aaff, #00ff99);
+  background:  #7de7bd;
   color: #333;
   border: none;
-  padding: 20px 60px;
+  padding: 15px 50px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
@@ -80,36 +80,31 @@ input:focus {
 }
 
 #search-button:hover {
-  background-color: #ffde58;
+  background-color: #209164;
 }
 
 #pokemon-info {
   margin-top: 20px;
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 
-#pokemon-info p {
-  margin: 5px 0;
+#pokemon-info table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#pokemon-info th, #pokemon-info td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#pokemon-info th {
+  background-color: #f2f2f2;
 }
 
 #sprite-container img {
-  margin-top: 10px;
   width: 150px;
   height: auto;
-}
-
-#pokemon-name {
-  font-size: 20px;
-  font-weight: bold;
-  color: #ffcb05;
-}
-
-#types p {
-  display: inline-block;
-  margin: 5px 5px 0 0;
-  padding: 5px 10px;
-  background-color: #ffcb05;
-  color: #333;
-  border-radius: 4px;
 }
