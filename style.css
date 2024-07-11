@@ -63,12 +63,12 @@ h1 {
 
 input:focus {
   background: transparent;
-  border: 1px solid #00ff99;
-  box-shadow: 0 0 10px #00ff99;
+  border: 1px solid #0f9;
+  box-shadow: 0 0 10px #0f9;
 }
 
 #search-button {
-  background:  #7de7bd;
+  background: #7de7bd;
   color: #333;
   border: none;
   padding: 15px 50px;
@@ -95,7 +95,9 @@ table {
   text-align: left;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid #ddd;
 }
 
