@@ -89,22 +89,37 @@ input:focus {
   text-align: left;
 }
 
-#pokemon-info table {
+table {
   width: 100%;
   border-collapse: collapse;
-}
-
-#pokemon-info th, #pokemon-info td {
-  border: 1px solid #ddd;
-  padding: 8px;
   text-align: left;
 }
 
-#pokemon-info th {
-  background-color: #f2f2f2;
+table, th, td {
+  border: 1px solid #ddd;
 }
 
-#sprite-container img {
-  width: 150px;
+th, td {
+  padding: 6px;
+  font-size: 14px;
+}
+
+td img {
+  width: 160px;
   height: auto;
+}
+
+#pokemon-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffcb05;
+}
+
+#types p {
+  display: inline-block;
+  margin: 5px 5px 0 0;
+  padding: 5px 10px;
+  background-color: #ffcb05;
+  color: #333;
+  border-radius: 4px;
 }

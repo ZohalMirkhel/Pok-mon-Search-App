@@ -1,5 +1,7 @@
 document.getElementById('search-button').addEventListener('click', async () => {
+  console.log('Search button clicked');
   const query = document.getElementById('search-input').value.trim().toLowerCase();
+  console.log('Query:', query);
   const infoTable = document.getElementById('pokemon-info-table');
   infoTable.innerHTML = '';
 
