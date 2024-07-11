@@ -1,13 +1,13 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f3f4f6;
+  background: linear-gradient(to bottom, hsla(200, 57%, 60%, 0.3), rgba(120, 215, 177, 0.3));
   color: #333;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Ensure body takes at least full viewport height */
+  min-height: 100vh;
 }
 
 .container {
@@ -19,26 +19,26 @@ body {
   padding: 30px;
   margin: 20px;
   box-sizing: border-box;
-  overflow: hidden; /* Ensure contents don't overflow */
+  overflow: hidden;
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center items horizontally */
+  flex-direction: column;
+  align-items: center;
 }
 
 .iframe-wrapper {
   width: 100%;
   height: 70vh;
-  overflow: hidden; /* Ensure contents don't overflow */
+  overflow: hidden;
   border-radius: 8px;
   margin-bottom: 20px;
-  position: relative; /* Add position relative for iframe scaling */
+  position: relative;
 }
 
 iframe {
   width: 100%;
   height: 100%;
   border: none;
-  transform-origin: 0 0; /* Set transform origin for scaling */
+  transform-origin: 0 0;
 }
 
 h1 {
@@ -65,11 +65,12 @@ h1 {
   background: linear-gradient(to bottom, #00aaff, #00ff99);
   color: #333;
   border: none;
-  padding: 10px 20px;
+  padding: 20px 60px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s;
+  font-weight: bold;
 }
 
 #search-button:hover {
