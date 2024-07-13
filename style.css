@@ -1,0 +1,128 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, hsla(200, 57%, 60%, 0.3), rgba(120, 215, 177, 0.3));
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 30px;
+  margin: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iframe-wrapper {
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  transform-origin: 0 0;
+}
+
+h1 {
+  font-size: 50px;
+  background: linear-gradient(to bottom, yellow, orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 20px;
+  -webkit-text-stroke: 2px blue;
+}
+
+#search-input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  background: transparent;
+  border: 1px solid #0f9;
+  box-shadow: 0 0 10px #0f9;
+}
+
+#search-button {
+  background: #7de7bd;
+  color: #333;
+  border: none;
+  padding: 15px 50px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+#search-button:hover {
+  background-color: #209164;
+}
+
+#pokemon-info {
+  margin-top: 20px;
+  width: 100%;
+  text-align: left;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  padding: 6px;
+  font-size: 14px;
+}
+
+td img {
+  width: 160px;
+  height: auto;
+}
+
+#pokemon-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffcb05;
+}
+
+#types p {
+  display: inline-block;
+  margin: 5px 5px 0 0;
+  padding: 5px 10px;
+  background-color: #ffcb05;
+  color: #333;
+  border-radius: 4px;
+}
